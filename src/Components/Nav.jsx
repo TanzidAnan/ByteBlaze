@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Nav = () => {
     const [theme, setTheme] = useState('light');
@@ -21,9 +21,9 @@ const Nav = () => {
 
 
     const link = <>
-        <Link to='/' className='font-bold text-red-600'><a>Home</a></Link>
-        <Link to='/blog' className='font-bold'><a>Blogs</a></Link>
-        <Link to='/bookMark' className='font-bold'><a>BookMarks</a></Link>
+        <NavLink to='/' className={({ isActive }) => isActive ? 'text-red-500 font-bold' : 'font-bold'}><a>Home</a></NavLink>
+        <NavLink to='/blog' className={({ isActive }) => isActive ? 'text-red-500 font-bold' : 'font-bold'}><a>Blog</a></NavLink>
+        <NavLink to='/bookMark' className={({ isActive }) => isActive ? 'text-red-500 font-bold' : 'font-bold'}><a>BookMarks</a></NavLink>
     </>
 
     return (

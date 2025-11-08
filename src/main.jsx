@@ -12,16 +12,22 @@ import MainLayout from './Layouts/MainLayout.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    Component:MainLayout ,
+    Component: MainLayout,
+    children: [
+      {
+        index:true,
+        Component:Home,
+      },
+      {
+        path: '/blog',
+        Component: Blog,
+      },
+      {
+        path: '/bookMark',
+        Component: BookMarks,
+      }
+    ]
   },
-  {
-    path:'/blog',
-    Component:Blog,
-  },
-  {
-    path:'/bookMark',
-    Component:BookMarks,
-  }
 ]);
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const BookMarks = () => {
     return (
-        <div>
+        <div >
             <h1>BookMarks </h1>
         </div>
     );
