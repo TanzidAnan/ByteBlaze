@@ -1,33 +1,40 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
-    const [theme,setTheme] =useState('light');
-    useEffect(() =>{
+    const [theme, setTheme] = useState('light');
+    useEffect(() => {
 
-        localStorage.setItem('theme',theme);
-        const localtheme =localStorage.getItem('theme');
-        document.querySelector('html').setAttribute('data-theme',localtheme)
+        localStorage.setItem('theme', theme);
+        const localtheme = localStorage.getItem('theme');
+        document.querySelector('html').setAttribute('data-theme', localtheme)
 
-    },[theme])
-    const hendleToggle =(e) =>{
-        if(e.target.checked){
+    }, [theme])
+    const hendleToggle = (e) => {
+        if (e.target.checked) {
             setTheme('black')
         }
-        else{
+        else {
             setTheme('light')
         }
     }
+
+
+    const link = <>
+        <Link to='/' className='font-bold text-red-600'><a>Home</a></Link>
+        <Link to='/blog' className='font-bold'><a>Blogs</a></Link>
+        <Link to='/bookMark' className='font-bold'><a>BookMarks</a></Link>
+    </>
+
     return (
         <div>
             <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
                 <div className="flex-1">
                     <a className="btn btn-ghost font-bold text-red-700 gap-0 normal-case text-2xl"><span className='text-emerald-600'>Byte</span>Blaze</a>
                 </div>
-                <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1">
-                        <li className='font-bold text-red-600'><a>Home</a></li>
-                        <li className='font-bold'><a>Blogs</a></li>
-                        <li className='font-bold'><a>BookMarks</a></li>
+                <div className="flex-none flex items-center gap-4">
+                    <ul className="menu menu-horizontal px-1 flex gap-3.5">
+                        {link}
                     </ul>
                     <label className="toggle text-base-content">
                         <input onChange={hendleToggle} type="checkbox" className="theme-controller" />

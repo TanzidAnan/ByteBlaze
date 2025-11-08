@@ -5,17 +5,28 @@ import App from './App.jsx'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Home from './Pages/Home.jsx';
+import Blog from './Pages/Blog.jsx';
+import BookMarks from './Pages/BookMarks.jsx';
+import MainLayout from './Layouts/MainLayout.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component:Home ,
+    Component:MainLayout ,
   },
+  {
+    path:'/blog',
+    Component:Blog,
+  },
+  {
+    path:'/bookMark',
+    Component:BookMarks,
+  }
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />,
+    <RouterProvider router={router} />
   </StrictMode>,
 )
