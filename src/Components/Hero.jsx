@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -6,12 +7,22 @@ const Hero = () => {
             <div className="hero">
                 <div className="hero-content text-center">
                     <div className="max-w-lg">
-                        <h1 className="text-5xl font-bold">Welcome to byteBlaze</h1>
+                        <h1 className="text-5xl font-bold">Welcome to <span>byteBlaze</span> </h1>
                         <p className="py-6">
-                           ByteBlaze is the bridge between the complex world of thechnology and the curious minds eager to understand it.
+                            ByteBlaze is the bridge between the complex world of thechnology and the curious minds eager to understand it.
                         </p>
-                        <button className="btn btn-primary">Red More</button>
-                        <button className="btn btn-primary">BookMarks</button>
+                        <div className='flex justify-center gap-2.5'>
+                            <Link to="/blog" className="relative inline-block px-4 py-2 font-medium group">
+                                <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-blue-400 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                                <span className="absolute inset-0 w-full h-full bg-white border-2 border-red-200 group-hover:bg-blue-400"></span>
+                                <span className="relative text-black group-hover:text-white">Red More</span>
+                            </Link>
+                            <Link to="/bookMark" className="relative inline-block px-4 py-2 font-medium group">
+                                <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-blue-400 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                                <span className="absolute inset-0 w-full h-full bg-white border-2 border-blue-400 group-hover:bg-blue-400"></span>
+                                <span className="relative text-black group-hover:text-white">Book Marks</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
