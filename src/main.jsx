@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/blog/:id',
-        loader:({params}) =>fetch(`https://dev.to/api/articles/${params}`),
+        loader:({params}) =>fetch(`https://dev.to/api/articles/${params.id}`),
         Component:SingleBlog
       },
       {
