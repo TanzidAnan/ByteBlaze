@@ -8,6 +8,7 @@ import Home from './Pages/Home.jsx';
 import Blog from './Pages/Blog.jsx';
 import BookMarks from './Pages/BookMarks.jsx';
 import MainLayout from './Layouts/MainLayout.jsx';
+import SingleBlog from './Pages/SingleBlog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         path: '/blog',
         loader:() =>fetch('https://dev.to/api/articles?per_page=20&top=7'),
         Component: Blog,
+      },
+      {
+        path:'/blog/:id',
+        loader:({params}) =>fetch(`https://dev.to/api/articles/${params}`),
+        Component:SingleBlog
       },
       {
         path: '/bookMark',
