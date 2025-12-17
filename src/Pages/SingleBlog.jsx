@@ -32,12 +32,12 @@ const SingleBlog = () => {
                         </Link>
                     </div>
                     <Outlet></Outlet>
-                    <p className="text-sm dark:text-gray-600">by
+                    {/* <p className="text-sm dark:text-gray-600">by
                         <a href="#" target="_blank" rel="noopener noreferrer" className="hover:underline dark:text-violet-600">
                             <span>Leroy Jenkins</span>
                         </a>on
                         <time datetime="2021-02-12 15:34:18-0200">Feb 12th 2021</time>
-                    </p>
+                    </p> */}
                 </div>
                 <div className="dark:text-gray-800">
                     <p>Insert the actual text content here...</p>
